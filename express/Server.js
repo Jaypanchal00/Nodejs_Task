@@ -5,8 +5,8 @@ const app = express()
 app.set("view engine", "ejs")
 
 app.use(express.urlencoded())
-// app.use(express.static(__dirname+"/public"))
-var student = [
+app.use(express.static(__dirname+"/public"))
+var  student = [
     {
         "id": 1,
         name: "Jay"
@@ -55,5 +55,5 @@ app.post("/editData", (req, res) => {
 })
 
 app.listen(7890, () => {
-    console.log("server listen")
+    console.log("server listen")
 })
