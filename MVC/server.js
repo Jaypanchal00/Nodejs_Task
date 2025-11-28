@@ -1,0 +1,10 @@
+const express = require('express')
+const db = require("./config/db")
+const user = require("./model/usermodel")
+const U_router = require("./Routes/userRouter")
+const app = express()
+app.use(express.json())
+app.use('/user', U_router)
+app.listen(4000, () => {
+    console.log("server listen")
+})
