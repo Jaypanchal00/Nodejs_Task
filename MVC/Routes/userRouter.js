@@ -1,11 +1,21 @@
 const express = require("express");
-const { Register, GetUser, EditUser, DeleteUser } = require("../Controller/userController");
+const router = express.Router();
+const { Register, Login, GetUser, UserPage } = require("../Controller/UserController");
 
-const U_router = express.Router();
+// UI Route — Register Page
+router.get("/register", (req, res) => {
+    res.render("register");
+});
 
-U_router.post("/register", Register);
-U_router.get("/all", GetUser);
-U_router.patch("/:id", EditUser);   
-U_router.delete("/:id", DeleteUser);
+// UI Route — Login Page
+router.get("/login", (req, res) => {
+    res.render("login");
+});
+router.get("/list",UserPage)
 
-module.exports = U_router;
+// API Routes
+router.post("/register", Register);
+router.post("/login", Login);
+router.get("/all", GetUser);
+
+module.exports = router;

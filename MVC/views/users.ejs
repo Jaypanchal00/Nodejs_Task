@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users List</title>
+
+    <style>
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 40px auto;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #aaa;
+            text-align: center;
+        }
+        th {
+            background: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align:center;">All Users</h1>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+        </tr>
+
+        <% users.forEach(user => { %>
+            <tr>
+                <td><%= user.name %></td>
+                <td><%= user.email %></td>
+                <td><%= user.password %></td>
+            </tr>
+        <% }) %>
+    </table>
+
+</body>
+</html>
