@@ -6,6 +6,10 @@ const Register = async (req, res) => {
     res.send(data);
 };
 
+const local = (req,res)=>{
+    return res.send("logged Successfully")
+}
+
 // LOGIN
 const Login = async (req, res) => {
     const { email, password } = req.body;
@@ -53,4 +57,4 @@ const EditUser = async (req, res) => {
     res.send(data);
 };
 
-module.exports = { Register, Login, GetUser, DeleteUser, EditUser, UserPage };
+module.exports = { Register, Login, GetUser, DeleteUser, EditUser, UserPage,local };

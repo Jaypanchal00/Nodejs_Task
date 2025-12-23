@@ -1,4 +1,4 @@
-const movieModel = require("../model/movieModel");
+const movieModel = require("../model/moviemodel");
 
 const addMovie = async (req, res) => {
     const data = await BookModel.create(req.body);

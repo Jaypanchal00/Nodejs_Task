@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>EDIT USER</h1>
+
+    <form action="/blogpage/editdata" method="post">
+        <input type="hidden" name="id" placeholder="Enter Id" value="<%= data._id%>">
+
+        <input type="text" name="username" placeholder="Enter name" value="<%= data.username%>">
+        <input type="text" name="password" placeholder="Enter password" value="<%= data.password%>">
+        <input type="number" name="age" placeholder="Enter Age" value="<%= data.age %>">
+        <input type="text" name="sport" placeholder="Enter sport" value="<%= data.sport %>">
+        <input type="text" name="gender" placeholder="Enter gender" value="<%= data.gender %>">
+        <input type="number" name="mobile" placeholder="Enter mobile" value="<%= data.mobile %>">
+        <input type="submit">
+    </form>
+
+</body>
+
+</html>

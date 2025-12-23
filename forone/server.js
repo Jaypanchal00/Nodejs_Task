@@ -5,28 +5,25 @@ const app = express()
 app.use(express.json())
 
 
-app.post("/insertData",async(req,res)=>{
+app.post("/insert-data", async (req, res) => {
     const data = await usermodel.create(req.body)
     res.send(data)
 })
 
-
-app.delete("/:id",async(req,res)=>{
-    const id =  req.params.id
-    const data = await usermodel.findByIdAndDelete(id)
-    res.send("success")
-})
-
-
-app.patch("/:id",async(req,res)=>{
-    const id =  req.params.id
-    const data = await usermodel.findByIdAndUpdate(id,req.body)
-    res.send(data)
-})
-app.get("/",async(req,res)=>{
-    const user1 =await usermodel.find({})
+app.get("/", async (req, res) => {
+    const user1 = await usermodel.find({})
     res.send(user1)
 })
-app.listen(3500,()=>{
-    console.log("Server listen")
+app.delete("/:id", async (req, res) => {
+    const id = req.params.id
+    const data = await usermodel.findByIdAndDelete(id)
+    res.send("Success")
 })
+app.put("/:id",async(req,res)=>{
+    const id = req.params.id
+    const data = await usermodel.findByIdAndUpdate(id,req.body,{new:true})
+    res.send(data)
+})
+app.listen(3500, () => {
+    console.log("server listen")
+})  
